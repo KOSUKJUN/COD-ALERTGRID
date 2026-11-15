@@ -1,0 +1,65 @@
+{
+  "name": "@codvill/cod-alertgrid",
+  "version": "0.1.0",
+  "description": "SIEM alert grid for Vue 3 — alert triage + evidence (contributing) events, built on @codvill/cod-searchgrid",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3",
+    "grid",
+    "siem",
+    "alert",
+    "soc",
+    "evidence",
+    "component"
+  ],
+  "files": [
+    "dist",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "main": "./dist/cod-alertgrid.umd.cjs",
+  "module": "./dist/cod-alertgrid.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/cod-alertgrid.js",
+      "require": "./dist/cod-alertgrid.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "searchgrid:sync": "node scripts/sync-searchgrid.mjs",
+    "searchgrid:which": "node scripts/sync-searchgrid.mjs --which",
+    "dev": "vite",
+    "mock": "node mock-server/server.mjs",
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@codvill/cod-searchgrid": ">=0.1.2",
+    "vue": "^3.4.0"
+  },
+  "publishConfig": {
+    "registry": "http://192.168.0.102:20000/repository/codvill-npm/"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "@vue/test-utils": "^2.5.1",
+    "jsdom": "^31.0.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.8",
+    "vite-plugin-dts": "^5.1.2",
+    "vitest": "^5.1.0",
+    "vue": "^3.5.45",
+    "vue-tsc": "^3.3.14"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+# npm run searchgrid:sync 로 받는 COD-SEARCHGRID 소스 (패키지 미설치 시 개발용 fallback)
+.searchgrid/
